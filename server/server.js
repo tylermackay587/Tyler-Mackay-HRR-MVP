@@ -3,7 +3,7 @@ var path = require('path');
 var bodyParser = require("body-parser");
 var todoItem = require("./database.js")
 var mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost/mvp');
+//mongoose.connect('mongodb://localhost/mvp');
 
 var app = express();
 
