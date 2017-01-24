@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require("body-parser");
+var todoItem = require("./database.js")
 
 var app = express();
 
@@ -13,8 +14,15 @@ app.get('/', function(req, res) {
 });
 
 app.post('/todos', function(req, res) {
-	console.log(req.body.content);
-	console.log(req.body.priority);
+	var newItem = todoItem({
+		content: req.body.content,
+		priority: req.body.priority
+	});
+	newItem.save(function(err) {
+  		if(err) {
+  		  throw err;
+  		}
+    });
 });
 
 app.listen(3000, function() {
