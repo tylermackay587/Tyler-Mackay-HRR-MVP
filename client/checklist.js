@@ -28,15 +28,15 @@ $(document).ready(function(){
         $(".todo").remove();
         data.forEach(function(todo){
         $("body").append(
-          "<div class='todo'>" + todo.content.toString() +  "<br>" +
+          "<div class='todo' id='" + todo.id + "'>" + todo.content.toString() +  "<br>" +
           "priority: " + todo.priority.toString() + "</div>");
         });
       }
     });
 	});
   $('body').on('click', ".todo", function(){
-    console.log(this.priority);
-    console.log(this.content);
+    console.log(this.id);
+    console.log(this);
     console.log(this);
   });
 });

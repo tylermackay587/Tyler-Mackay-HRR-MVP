@@ -6,6 +6,7 @@ var mongoose = require("mongoose");
 mongoose.connect('mongodb://checklist:checklist@ds035583.mlab.com:35583/heroku_f51m8qvf');
 
 var app = express();
+var dbCount = 0;
 
 var port = process.env.PORT || 8080;
 
@@ -20,13 +21,15 @@ app.get('/', function(req, res) {
 app.post('/todos', function(req, res) {
 	var newItem = todoItem({
 		content: req.body.content,
-		priority: req.body.priority
+		priority: req.body.priority,
+    id: dbCount
 	});
 	newItem.save(function(err) {
   		if(err) {
   		  throw err;
   		}
-    });
+      dbCount += 1;
+  });
 
     res.send("posted");
 });
