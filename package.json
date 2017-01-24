@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/tylermackay587/Tyler-Mackay-HRR-MVP#readme",
   "dependencies": {
+    "body-parser": "^1.16.0",
     "express": "^4.14.0",
+    "mongoose": "^4.7.7",
     "morgan": "^1.7.0"
   }
 }
