@@ -3,7 +3,7 @@ var path = require('path');
 var bodyParser = require("body-parser");
 var todoItem = require("./database.js")
 var mongoose = require("mongoose");
-mongoose.connect('mongodb://heroku_f51m8qvf:@ds035583.mlab.com:35583/heroku_f51m8qvf');
+mongoose.connect('mongodb://checklist:checklist@ds035583.mlab.com:35583/heroku_f51m8qvf');
 
 var app = express();
 
