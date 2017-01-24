@@ -34,4 +34,9 @@ $(document).ready(function(){
       }
     });
 	});
+  $(".todo").on('click', function(){
+    console.log(this.priority);
+    console.log(this.content);
+    console.log(this);
+  });
 });
