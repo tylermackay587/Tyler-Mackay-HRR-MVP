@@ -7,6 +7,8 @@ mongoose.connect('mongodb://localhost/mvp');
 
 var app = express();
 
+var port = process.env.PORT || 8080;
+
  app.use(express.static(path.resolve("client")));
  app.use(bodyParser.urlencoded({ extended: false }));
  app.use(bodyParser.json());
@@ -25,6 +27,8 @@ app.post('/todos', function(req, res) {
   		  throw err;
   		}
     });
+
+    res.send("posted");
 });
 
 app.get("/todos", function(req, res){
@@ -36,6 +40,6 @@ app.get("/todos", function(req, res){
     });
 });
 
-app.listen(3000, function() {
-  console.log('app is listening on port 3000');
+app.listen(port, function() {
+  console.log('app is listening on port ' + port);
 });
