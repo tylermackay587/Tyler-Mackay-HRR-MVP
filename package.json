@@ -1,0 +1,23 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylermackay587/Tyler-Mackay-HRR-MVP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylermackay587/Tyler-Mackay-HRR-MVP/issues"
+  },
+  "homepage": "https://github.com/tylermackay587/Tyler-Mackay-HRR-MVP#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
+  }
+}
