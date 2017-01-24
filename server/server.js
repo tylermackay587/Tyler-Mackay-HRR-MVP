@@ -2,6 +2,8 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require("body-parser");
 var todoItem = require("./database.js")
+var mongoose = require("mongoose");
+mongoose.connect('mongodb://localhost/mvp');
 
 var app = express();
 
@@ -22,6 +24,15 @@ app.post('/todos', function(req, res) {
   		if(err) {
   		  throw err;
   		}
+    });
+});
+
+app.get("/todos", function(req, res){
+    todoItem.find({}, function(err, docs){
+        if(err){
+            throw err;
+        }
+        res.send(docs);
     });
 });
 
