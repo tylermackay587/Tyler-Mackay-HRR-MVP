@@ -35,8 +35,6 @@ $(document).ready(function(){
     });
 	});
   $('body').on('click', ".todo", function(){
-    console.log(this.id);
-    console.log(this);
-    console.log(this);
+    $("#" + this.id).remove();
   });
 });
