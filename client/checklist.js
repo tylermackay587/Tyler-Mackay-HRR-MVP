@@ -34,7 +34,7 @@ $(document).ready(function(){
       }
     });
 	});
-  $(".todo").on('click', function(){
+  $('body').on('click', ".todo", function(){
     console.log(this.priority);
     console.log(this.content);
     console.log(this);
