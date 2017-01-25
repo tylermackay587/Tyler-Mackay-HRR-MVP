@@ -5,12 +5,12 @@ $(document).ready(function(){
       url: "/todos",
       success: function(data){
         $(".todo").remove();
-          data.forEach(function(todo){
-            $("body").append(
-              "<div class='todo'>" + todo.content.toString() +  "<br>" +
-              "priority: " + todo.priority.toString() + "</div>");
-          });
-        }
+        data.forEach(function(todo){
+        $("body").append(
+          "<div class='todo " + todo.priority + "' id='" + todo.id + "'>" + todo.content.toString() +  "<br>" +
+          "priority: " + todo.priority.toString() + "</div>");
+        });
+      }
       });
 	$(".newTodo").on("click", function(){
 		$.ajax({
