@@ -35,6 +35,13 @@ $(document).ready(function(){
     });
 	});
   $('body').on('click', ".todo", function(){
+    $.ajax({
+      method: "DELETE",
+      url: "/todos",
+      data: {
+        id: this.id
+      }
+    })
     $("#" + this.id).remove();
   });
 });

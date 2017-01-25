@@ -43,6 +43,10 @@ app.get("/todos", function(req, res){
     });
 });
 
+app.delete("/todos", function(req, res){
+  console.log("!!!!!!!!!!", req.body.id)
+});
+
 app.listen(port, function() {
   console.log('app is listening on port ' + port);
 });
