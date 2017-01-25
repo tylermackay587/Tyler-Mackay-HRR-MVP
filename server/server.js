@@ -44,7 +44,12 @@ app.get("/todos", function(req, res){
 });
 
 app.delete("/todos", function(req, res){
-  console.log("!!!!!!!!!!", req.body.id)
+  todoItem.remove({id: req.body.id}, function(err){
+    if(err){
+      throw err;
+    }
+  });
+  res.send("deleted");
 });
 
 app.listen(port, function() {
