@@ -28,7 +28,7 @@ $(document).ready(function(){
         $(".todo").remove();
         data.forEach(function(todo){
         $("body").append(
-          "<div class='todo' id='" + todo.id + "'>" + todo.content.toString() +  "<br>" +
+          "<div class='todo' id='" + todo.id + "' class='"+ todo.priority + "'>" + todo.content.toString() +  "<br>" +
           "priority: " + todo.priority.toString() + "</div>");
         });
       }
