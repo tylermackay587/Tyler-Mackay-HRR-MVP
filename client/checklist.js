@@ -8,7 +8,7 @@ $(document).ready(function(){
         data.forEach(function(todo){
         $("body").append(
           "<div class='todo " + todo.priority + "' id='" + todo.id + "'>" + todo.content.toString() +  "<br>" +
-          "priority: " + todo.priority.toString() + "</div>");
+          "Priority: " + todo.priority.toString() + "</div>");
         });
       }
       });
@@ -29,7 +29,7 @@ $(document).ready(function(){
         data.forEach(function(todo){
         $("body").append(
           "<div class='todo " + todo.priority + "' id='" + todo.id + "'>" + todo.content.toString() +  "<br>" +
-          "priority: " + todo.priority.toString() + "</div>");
+          "Priority: " + todo.priority.toString() + "</div>");
         });
       }
     });

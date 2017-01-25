@@ -7,18 +7,18 @@ div {
     font-size: 24px;
 }
 
-.none {
+.None {
 	background-color: grey;
 }
-.low {
+.Low {
 	background-color: green;
 }
-.medium {
+.Medium {
 	background-color: yellow;
 }
-.high {
+.High {
 	background-color: red;
 }
-.ultra-high {
+.Ultra-High {
 	background-color: purple;
 }
