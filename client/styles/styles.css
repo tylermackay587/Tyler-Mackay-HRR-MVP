@@ -1,0 +1,27 @@
+div {
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+.none {
+	background-color: grey;
+	opacity: 60%;
+}
+.low {
+	background-color: green;
+	opacity: 60%;
+}
+.medium {
+	background-color: yellow;
+	opacity: 60%;
+}
+.none {
+	background-color: red;
+	opacity: 60%;
+}
+.none {
+	background-color: purple;
+	opacity: 60%;
+}
