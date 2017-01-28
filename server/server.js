@@ -3,9 +3,10 @@ var path = require('path');
 var bodyParser = require("body-parser");
 var todoItem = require("./database.js")
 var mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost/mvp');
+mongoose.connect('mongodb://checklist:checklist@ds035583.mlab.com:35583/heroku_f51m8qvf');
 
 var app = express();
+var dbCount = 0;
 
 var port = process.env.PORT || 8080;
 
@@ -20,14 +21,16 @@ app.get('/', function(req, res) {
 app.post('/todos', function(req, res) {
 	var newItem = todoItem({
 		content: req.body.content,
-		priority: req.body.priority
+		priority: req.body.priority,
+    id: dbCount
 	});
 	newItem.save(function(err) {
-  	if(err) {
-  		throw err;
-  	}
+  		if(err) {
+  		  throw err;
+  		}
+      dbCount += 1;
   });
-  res.send("posted");
+    res.send("posted");
 });
 
 app.get("/todos", function(req, res){
@@ -37,6 +40,15 @@ app.get("/todos", function(req, res){
     }
     res.send(docs);
   });
+});
+
+app.delete("/todos", function(req, res){
+  todoItem.remove({id: req.body.id}, function(err){
+    if(err){
+      throw err;
+    }
+  });
+  res.send("deleted");
 });
 
 app.listen(port, function() {
