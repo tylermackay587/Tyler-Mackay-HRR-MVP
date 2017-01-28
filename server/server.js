@@ -23,21 +23,20 @@ app.post('/todos', function(req, res) {
 		priority: req.body.priority
 	});
 	newItem.save(function(err) {
-  		if(err) {
-  		  throw err;
-  		}
-    });
-
-    res.send("posted");
+  	if(err) {
+  		throw err;
+  	}
+  });
+  res.send("posted");
 });
 
 app.get("/todos", function(req, res){
-    todoItem.find({}, function(err, docs){
-        if(err){
-            throw err;
-        }
-        res.send(docs);
-    });
+  todoItem.find({}, function(err, docs){
+    if(err){
+      throw err;
+    }
+    res.send(docs);
+  });
 });
 
 app.listen(port, function() {
